@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="{{ request.locale.iso_code }}">
-
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,7 +30,6 @@
     {% render 'meta-tags' %}
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-     <script src="{{ 'faq.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
 
     {%- liquid
@@ -110,11 +108,8 @@
       }
     {% endstyle %}
 
-{{ 'custom.css' | asset_url | stylesheet_tag }}
-{{ 'section-marquee.css' | asset_url | stylesheet_tag }}
-    {{ 'section-features.css' | asset_url | stylesheet_tag }}
     {{ 'base.css' | asset_url | stylesheet_tag }}
-    
+
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
